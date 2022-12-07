@@ -6,7 +6,7 @@ add_definitions(-D__KERNEL__)
 add_definitions(-D__x86_64__)
 add_definitions(-DCONFIG_DEBUG_LIST)
 add_definitions(-DCONFIG_INET)
-set(kernel_base ${CMAKE_CURRENT_SOURCE}/linux-4.19.248)
+set(kernel_base ${CMAKE_CURRENT_SOURCE_DIR}/linux-4.19.248)
 
 include_directories(${kernel_base}/include)
 include_directories(${kernel_base}/arch/x86/include)
