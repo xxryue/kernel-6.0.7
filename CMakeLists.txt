@@ -23,8 +23,7 @@ add_library(kernel OBJECT
 	${core_src}
 	${wg_src}
 	${lib_src}
-		${mm_src}
-		${driver_base_src}
-		${virtual_device_src}
-
+	${mm_src}
+	${driver_base_src}
+	${virtual_device_src}
 )
