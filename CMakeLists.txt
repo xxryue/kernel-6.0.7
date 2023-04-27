@@ -18,6 +18,9 @@ add_definitions(-DCONFIG_EVENT_TRACING)
 add_definitions(-DCONFIG_CGROUP_PERF)
 add_definitions(-DCONFIG_SECURITY)
 add_definitions(-DCONFIG_BPF_JIT)
+add_definitions(-DCONFIG_HAVE_EBPF_JIT)
+add_definitions(-DCONFIG_KALLSYMS)
+add_definitions(-DCONFIG_MODULES)
 
 set(kernel_base ${CMAKE_CURRENT_SOURCE_DIR}/linux-4.19.248)
 
@@ -30,6 +33,7 @@ include(cmake/lib.cmake)
 include(cmake/mm.cmake)
 include(cmake/driver_base.cmake)
 include(cmake/security.cmake)
+include(cmake/fs.cmake)
 add_library(kernel OBJECT
 	${net_src}
 	${core_src}
@@ -37,4 +41,5 @@ add_library(kernel OBJECT
 	${mm_src}
 	${driver_base_src}
 	${security_src}
+	${fs_src}
 )
