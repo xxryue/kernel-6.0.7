@@ -30,6 +30,8 @@ add_definitions(-DCONFIG_CGROUP_BPF)
 add_definitions(-DCONFIG_CGROUPS)
 add_definitions(-DCONFIG_SOCK_CGROUP_DATA)
 add_definitions(-DCONFIG_NET)
+add_definitions(-DCONFIG_X86_32)
+add_definitions(-DCONFIG_X86_64)
 
 set(kernel_base ${CMAKE_CURRENT_SOURCE_DIR}/linux-4.19.248)
 
@@ -43,6 +45,7 @@ include(cmake/mm.cmake)
 include(cmake/driver_base.cmake)
 include(cmake/security.cmake)
 include(cmake/fs.cmake)
+include(cmake/arch.cmake)
 add_library(kernel OBJECT
 	${net_src}
 	${core_src}
@@ -51,4 +54,5 @@ add_library(kernel OBJECT
 	${driver_base_src}
 	${security_src}
 	${fs_src}
+	${arch_src}
 )
